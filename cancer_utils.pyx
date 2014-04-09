@@ -237,10 +237,8 @@ cdef char cevaluate_cell2D_p(char[:, :] grid, int i, int j, char N, char C, char
                              float mutation_r, float growth_r, float binding_r, float death_r, float rebirth_r,
                              bint g_comp) nogil:
     """
-        nogil version for parallelisation. The lack of python types (dict) means that this fucntion is much more rigid
+        nogil version for parallelisation. The lack of python types (dict) means that this function is much more rigid
         than the gil version.
-
-        returns -1 (== 255 for unsigned char) for 'needs growth attempt'
     """
     cdef:
         char current_state = grid[i, j]
