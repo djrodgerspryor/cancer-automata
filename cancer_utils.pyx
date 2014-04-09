@@ -260,7 +260,7 @@ cdef char cevaluate_cell2D_p(char[:, :] grid, int i, int j, char N, char C, char
             if neighbor != NULL:  # If neighbor is valid
                 grid[neighbor.x, neighbor.y] = C  # Grow into chosen neighbor
 
-        if crand_bool(binding_r):
+        elif crand_bool(binding_r):
             # Note: can only become cytotoxic if growth fails
             new_state = E  # Bind with effector to form cytotoxic complex
 
